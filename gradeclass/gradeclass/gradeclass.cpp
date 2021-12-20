@@ -2,11 +2,38 @@
 //
 
 #include <iostream>
+using namespace std;
 
 int main()
 {
-	int n;
-    std::cout << "Hello World!\n";
+	int currGrade;
+	float studentGrade;
+	int studentNumber = 2;
+	int count;
+	int sum;
+	cout << "Enter grades : " << endl;
+
+	for (count = 1; count <= studentNumber; count++) {
+		cin >> currGrade;
+		sum += currGrade;
+	}
+	
+	studentGrade = (float)sum / 2;
+
+	if (studentGrade < 60)
+	{
+		cout << "Student Failed:(" << endl;
+
+	}
+	else if(studentGrade >= 90) {
+		cout << "Student Graduated with Honors:)" << endl;
+
+	}
+	else {
+		cout << "Student Graduated!" << endl;
+	}
+
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
