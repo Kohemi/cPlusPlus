@@ -2,12 +2,53 @@
 //
 
 #include <iostream>
+using namespace std;
+
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int n, k, i, nFact, kFact, n_kFact, k_comb;
+	cout << "Please enter n and k (n>=k) :" << endl;
+	cin >> n >> k;
+
+	nFact = 1;
+	for (i = 1; i <= n; i++) 
+	{
+		nFact *= i;
+	}
+	// Above expression is same with nFact = factorial(n);
+	kFact = 1;
+	for (i = 1; i <= k; i++)
+	{
+		kFact *= i;
+	}
+	// Above expression is same with kFact = factorial(k);
+	n_kFact = 1;
+	for (i = 1; i <= n - k; i++)
+	{
+		n_kFact *= i;
+	}
+	// Above expression is same with n_kFact = factorial(n-k);
+
+	k_comb = nFact / (kFact*n_kFact);
+	cout << n << " choose " << k << " is " << k_comb << endl;
+
+	return 0;
 }
 
+int factorial(int num)
+{
+	int factRes, i;
+
+	factRes = 1;
+	for (i = 1; i <= num; i++)
+	{
+		factRes *= i;
+	}
+
+	return factRes;
+}
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
 
